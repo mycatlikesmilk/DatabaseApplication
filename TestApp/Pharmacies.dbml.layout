@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Pharmacies">
+  <DataContextMoniker Name="/PharmaciesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3dd9a744-e635-490e-bd3c-88c0574446c2" absoluteBounds="6.25, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PharmaciesDataContext/butch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19d1f822-ee1e-4891-be16-f98f340a1dec" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f61c2d49-a1ec-4e05-8735-5fd078ddb517" absoluteBounds="3.5, 1, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/PharmaciesDataContext/storage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7f40580-bf62-4931-8bd7-2c3945263aef" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7646afef-ea28-4e7b-9208-6bfce694a0af" absoluteBounds="3.5, 4.125, 2, 1.1939925130208326">
+      <DataClassMoniker Name="/PharmaciesDataContext/good" />
+      <nestedChildShapes>
+        <elementListCompartment Id="505a6f34-9e9f-49e7-91e5-e48b6383d236" absoluteBounds="3.515, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="011879ff-94c5-4d26-8a09-9e5f9f272238" absoluteBounds="0.75, 0.875, 2, 1.5785953776041663">
+      <DataClassMoniker Name="/PharmaciesDataContext/pharmacy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d73b420-a139-4016-89c3-745da0721064" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.69314697265625); (6.25 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PharmaciesDataContext/storage/storage_butch" />
+      <nodes>
+        <classShapeMoniker Id="f61c2d49-a1ec-4e05-8735-5fd078ddb517" />
+        <classShapeMoniker Id="3dd9a744-e635-490e-bd3c-88c0574446c2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.72199625651042); (7.25 : 4.72199625651042); (7.25 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PharmaciesDataContext/good/good_butch" />
+      <nodes>
+        <classShapeMoniker Id="7646afef-ea28-4e7b-9208-6bfce694a0af" />
+        <classShapeMoniker Id="3dd9a744-e635-490e-bd3c-88c0574446c2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.69314697265625); (3.5 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PharmaciesDataContext/pharmacy/pharmacy_storage" />
+      <nodes>
+        <classShapeMoniker Id="011879ff-94c5-4d26-8a09-9e5f9f272238" />
+        <classShapeMoniker Id="f61c2d49-a1ec-4e05-8735-5fd078ddb517" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PharmaciesController" Class="PharmaciesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-495PD5I;Initial Catalog=PharmaciesController;Integrated Security=True" SettingsObjectName="TestApp.Properties.Settings" SettingsPropertyName="PharmaciesControllerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.butches" Member="butches">
+    <Type Name="butch">
+      <Column Name="butch_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="good_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="storage_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="storage_butch" Member="storage" ThisKey="storage_id" OtherKey="storage_id" Type="storage" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="good_butch" Member="good" ThisKey="good_id" OtherKey="good_id" Type="good" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.storages" Member="storages">
+    <Type Name="storage">
+      <Column Name="storage_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pharmacy_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="storage_butch" Member="butches" ThisKey="storage_id" OtherKey="storage_id" Type="butch" />
+      <Association Name="pharmacy_storage" Member="pharmacy" ThisKey="pharmacy_id" OtherKey="pharmacy_id" Type="pharmacy" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.goods" Member="goods">
+    <Type Name="good">
+      <Column Name="good_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="good_butch" Member="butches" ThisKey="good_id" OtherKey="good_id" Type="butch" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pharmacies" Member="pharmacies">
+    <Type Name="pharmacy">
+      <Column Name="pharmacy_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="addr" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="pharmacy_storage" Member="storages" ThisKey="pharmacy_id" OtherKey="pharmacy_id" Type="storage" />
+    </Type>
+  </Table>
+</Database>
